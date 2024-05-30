@@ -1,7 +1,7 @@
 import path from "path";
 import express from "express";
 import dotenv from "dotenv";
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 import authRoutes from "./apis/routes/auth.routes.js";
 import messageRoutes from "./apis/routes/message.routes.js";
 import userRoutes from "./apis/routes/user.routes.js";
@@ -35,7 +35,7 @@ const PORT= process.env.PORT || 5000;
 
 
 
-const MongoDB = process.env.MONGO_DB
+const MongoDB = process.env.MONGO_DB || "mongodb+srv://sahal:sahal@yoom-clone.91dsdmu.mongodb.net/Clone"
 
 
 
@@ -46,6 +46,7 @@ server.listen(PORT,()=>{
 
 async function main(){
     try{
+        console.log(MongoDB, 'mognodb url -----------------')
         await mongoose.connect(MongoDB)
         console.log("Database connected...");
     }
