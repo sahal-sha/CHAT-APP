@@ -34,6 +34,7 @@ app.get("*",(req,res)=>{
 const PORT= process.env.PORT || 5000;
 
 
+console.log(process.env.MONGO_DB, 'env mongodb url ============')
 
 const MongoDB = process.env.MONGO_DB || "mongodb+srv://sahal:sahal@yoom-clone.91dsdmu.mongodb.net/Clone"
 
