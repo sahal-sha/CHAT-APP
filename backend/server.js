@@ -34,9 +34,7 @@ app.get("*",(req,res)=>{
 const PORT= process.env.PORT || 5000;
 
 
-console.log(process.env.MONGO_DB, 'env mongodb url ============')
-
-const MongoDB = process.env.MONGO_DB || "mongodb+srv://sahal:sahal@yoom-clone.91dsdmu.mongodb.net/Clone"
+const MongoDB = process.env.MONGO_DB
 
 
 
@@ -47,7 +45,6 @@ server.listen(PORT,()=>{
 
 async function main(){
     try{
-        console.log(MongoDB, 'mognodb url -----------------')
         await mongoose.connect(MongoDB)
         console.log("Database connected...");
     }
